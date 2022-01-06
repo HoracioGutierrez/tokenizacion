@@ -37,6 +37,11 @@ html , body , #root {
 
 
 #page-landing {
+
+    .landing-section {
+        padding: 50px 0;
+    }
+
     #landing-section-banner {
 
         display: flex;
@@ -77,6 +82,27 @@ html , body , #root {
 
                 button {
                 }
+            }
+        }
+    }
+
+    #landing-section-roundicons {
+
+        padding: 0 200px;
+        display: flex;
+        justify-content: space-between;
+
+        .roundicons-item {
+
+            width : 15%;
+            text-align: center;
+
+            .roundicons-item-title {
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: rgb(61, 61, 61);
             }
         }
     }

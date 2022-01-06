@@ -23,7 +23,28 @@ const Landing = () => {
                     <img src="/assets/svg/header02.svg" alt="Landing Banner"/>
                 </div>
             </section>
-            <section id="dos" className="landing-section"></section>
+            <section id="landing-section-roundicons" className="landing-section">
+                <div className="roundicons-item">
+                    <img src="/assets/svg/iconos-01.svg" alt="Landing Roundicons 01"/>
+                    <Typography variant="h5" className="roundicons-item-title">1. BÚSQUEDA</Typography>
+                    <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam.</Typography>
+                </div>
+                <div className="roundicons-item">
+                    <img src="/assets/svg/iconos-02.svg" alt="Landing Roundicons 02"/>
+                    <Typography variant="h5" className="roundicons-item-title">2. TOKENIZACIÓN</Typography>
+                    <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam.</Typography>
+                </div>
+                <div className="roundicons-item">
+                    <img src="/assets/svg/iconos-03.svg" alt="Landing Roundicons 03"/>
+                    <Typography variant="h5" className="roundicons-item-title">3. DIVIDENDOS</Typography>
+                    <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam.</Typography>
+                </div>
+                <div className="roundicons-item">
+                    <img src="/assets/svg/iconos-04.svg" alt="Landing Roundicons 04"/>
+                    <Typography variant="h5" className="roundicons-item-title">4. MARKETPLACE</Typography>
+                    <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam.</Typography>
+                </div>
+            </section>
             <section id="tres" className="landing-section"></section>
             <section id="cuatro" className="landing-section"></section>
             <section id="cinco" className="landing-section"></section>
