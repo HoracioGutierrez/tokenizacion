@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html , body , #root {
+    height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#layout-header {
+
+    box-shadow: unset;
+
+    #main-logo {
+        height: 64px;
+    }
+
+    .layout-header-link:hover{
+        background-color: unset;
+    }
+}
