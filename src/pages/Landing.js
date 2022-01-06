@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import theme from "../providers/ThemeProvider/theme"
 
 const Landing = () => {
@@ -15,6 +15,9 @@ const Landing = () => {
                     <Typography variant="h5" component="p">
                         Invierta de manera fácil y segura en RealEstate utilizando la tecnología Blockchain y Smart Contracts. Acceda a las mejores oportunidades de inversiones moviliarias con una alta rentabilidad y liquidez.
                     </Typography>
+                    <Button variant="contained" color="primary">
+                        <Typography variant="h5">COMIENTE A INVERTIR</Typography>
+                    </Button>
                 </div>
                 <div id="banner-img">
                     <img src="/assets/svg/header02.svg" alt="Landing Banner"/>
