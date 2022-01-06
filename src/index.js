@@ -1,11 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { ThemeProvider } from '@mui/material/styles';
 import App from './App'
-import theme from './theme'
+import ThemeProvider from './providers/ThemeProvider/ThemeProvider'
+import ReduxProvider from './providers/ReduxProvider/ReduxProvider'
+import ActionProvider from './providers/ActionProvider/ActionProvider'
 
 ReactDOM.render(
-    <ThemeProvider theme={theme}>
-        <App />
-    </ThemeProvider>,
+    <ReduxProvider>
+        <ThemeProvider>
+            <ActionProvider>
+                <App />
+            </ActionProvider>
+        </ThemeProvider>
+    </ReduxProvider>,
     document.getElementById('root'))
