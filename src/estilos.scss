@@ -21,9 +21,60 @@ html , body , #root {
 
     #main-logo {
         height: 64px;
+        margin-left: -10px;
     }
 
-    .layout-header-link:hover{
-        background-color: unset;
+    .layout-header-link{
+        
+        text-transform: unset;
+        
+        &:hover{
+            background-color: unset;
+        }
+    }
+}
+
+
+
+#page-landing {
+    #landing-section-banner {
+
+        display: flex;
+
+        div {
+        
+            width: 50%;
+
+            &#banner-text {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+
+                    font-size: 5rem;
+                    font-weight: bold;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    letter-spacing: 8px;
+                    margin-bottom: 2rem;
+                    
+                    span:nth-child(2) {
+                        letter-spacing: normal;
+                        font-size: 4rem;
+                        padding: 0 1rem;
+                    }
+                }
+
+                p {
+                    max-width: 600px;
+                    text-align: center;
+                    color: rgb(61, 61, 61);
+                }
+            }
+        }
     }
 }

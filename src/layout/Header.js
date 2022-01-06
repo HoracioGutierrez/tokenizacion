@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <AppBar position='static' id="layout-header" color='transparent'>
             <Container maxWidth="xxl">
-                <Toolbar>
+                <Toolbar disableGutters>
                     <img id="main-logo" src='/assets/images/logo_naranja.png' alt='Fintech Logo' />
                     <Box sx={{ flexGrow: 1, justifyContent: "flex-end", display: "flex" }}>
                         <Button className='layout-header-link' color='inherit'disableRipple disableElevation to="/que-es-tokenizacion" component={Link}>
