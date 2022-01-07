@@ -55,12 +55,21 @@ html , body , #root {
     #landing-section-banner {
 
         position: relative;
-        height: calc(100vh - 65px);
-
+        height: calc(100vh - 60px);
+        
+        @media screen and (min-width: 1200px) {
+            display: flex;
+        }
+        
         > div {
             position: absolute;
             width: 100%;
             height: calc(100vh - 165px);
+
+            @media screen and (min-width: 1200px) {
+                position: relative;
+            }
+
         }
 
         #banner-text {
@@ -78,17 +87,57 @@ html , body , #root {
 
                 span:nth-child(1) {
                     font-size: 4rem;
+
+                    @media screen and (min-width: 600px) {
+                        font-size: 5rem;
+                    }
+
+                    @media screen and (min-width: 900px) {
+                        font-size: 6rem;
+                    }
+
                 }
 
                 span:nth-child(2) {
                     font-size: 2.5rem;
+
+                    @media screen and (min-width: 600px) {
+                        font-size: 3rem;
+                    }
+
+                    @media screen and (min-width: 900px) {
+                        font-size: 3.5rem;
+                    }
                 }
             }
 
             p {
                 text-align: center;
-                font-size: 1.3rem;
+                font-size: 1rem;
                 margin : 2rem 0;
+                max-width: 600px;
+
+                @media screen and (min-width: 600px) {
+                    font-size: 1.2rem;
+                }
+
+                @media screen and (min-width: 900px) {
+                    font-size: 1.3rem;
+                }
+            }
+
+            button {
+                h5 {
+                    font-size: 1rem;
+
+                    @media screen and (min-width: 600px) {
+                        font-size: 1.3rem;
+                    }
+
+                    @media screen and (min-width: 900px) {
+                        font-size: 1.5rem;
+                    }
+                }
             }
         }
 
@@ -98,48 +147,11 @@ html , body , #root {
             justify-content: center;
             align-items: center;
             opacity: 0.3;
-        }
 
-        /* display: flex;
-
-        div {
-        
-            width: 50%;
-
-            &#banner-text {
-
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                h2 {
-
-                    font-size: 5rem;
-                    font-weight: bold;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    letter-spacing: 8px;
-
-                    span:nth-child(2) {
-                        letter-spacing: normal;
-                        font-size: 4rem;
-                        padding: 0 1rem;
-                    }
-                }
-
-                p {
-                    max-width: 600px;
-                    text-align: center;
-                    color: rgb(61, 61, 61);
-                    margin : 2rem 0;
-                }
-
-                button {
-                }
+            @media screen and (min-width: 1200px) {
+                opacity: 1;
             }
-        } */
+        }
     }
 
     #landing-section-roundicons {
