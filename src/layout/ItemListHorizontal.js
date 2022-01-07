@@ -13,6 +13,7 @@ const ItemListHorizontal = () => {
                     {text}
                 </Button>
             ))}
+            <Button variant='contained'>Conectar a Wallet</Button>
         </>
     )
 }

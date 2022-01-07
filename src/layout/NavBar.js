@@ -9,9 +9,9 @@ const NavBar = () => {
     const matches = useMediaQuery(theme.breakpoints.up("lg"))
 
     return (
-        <div>
+        <>
             {matches ? <ItemListHorizontal/> : <ItemListDrawer/>}
-        </div>
+        </>
     )
 }
 

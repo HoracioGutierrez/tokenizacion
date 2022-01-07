@@ -5,31 +5,31 @@ const initialState = {
     drawer_open : false,
     links : [
         {
-            id : 0,
+            id : 1,
             text : "inicio",
             to : "/",
             public : true
         },
         {
-            id : 1,
+            id : 2,
             text : "Que es la tokenización?",
             to : "/que-es-tokenizacion",
             public : true
         },
         {
-            id : 2,
+            id : 3,
             text : "Beneficios",
             to : "/beneficios",
             public : true
         },
         {
-            id : 3,
+            id : 4,
             text : "Proyectos",
             to : "/proyectos",
             public : true
         },
         {
-            id : 4,
+            id : 5,
             text : "Marketplace",
             to : "/marketplace",
             public : true

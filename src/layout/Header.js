@@ -18,7 +18,6 @@ const Header = () => {
                     <img id="main-logo" src='/assets/images/logo_naranja.png' alt='Fintech Logo' />
                     <Box sx={{ flexGrow: 1, justifyContent: "flex-end", display: "flex" }}>
                         <NavBar />
-                        <Button variant='contained'>Conectar a Wallet</Button>
                         <Hidden lgUp>
                             <IconButton onClick={toggleDrawer} className='material-icons'>
                                 menu

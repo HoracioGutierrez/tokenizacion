@@ -1,4 +1,4 @@
-import { Divider, Drawer, List, ListItem, ListItemText } from "@mui/material"
+import { Button, Divider, Drawer, List, ListItem, ListItemText } from "@mui/material"
 import { Fragment } from "react"
 import { Link } from "react-router-dom"
 import useActions from "../hooks/useActions"
@@ -12,14 +12,18 @@ const ItemListDrawer = () => {
     return (
         <Drawer open={drawer_open} onClose={toggleDrawer}>
             <List>
+                <ListItem button>
+                    <ListItemText>
+                        <Button  variant='contained'>Conectar a Wallet</Button>
+                    </ListItemText>
+                </ListItem>
                 {links.map(({ to, id, text }) => (
                     <Fragment key={id}>
                         <ListItem button>
                             <ListItemText>
-                                <Link to={to} className='css-1kfpdn6-MuiButtonBase-root-MuiButton-root'>{text}</Link>
+                                <Link to={to}>{text}</Link>
                             </ListItemText>
                         </ListItem>
-                        <Divider/>
                     </Fragment>
                 ))}
             </List>
