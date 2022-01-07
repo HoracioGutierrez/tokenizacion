@@ -21,7 +21,7 @@ const ItemListDrawer = () => {
                     <Fragment key={id}>
                         <ListItem button>
                             <ListItemText>
-                                <Link to={to}>{text}</Link>
+                                <Link to={to} className="drawer-link">{text}</Link>
                             </ListItemText>
                         </ListItem>
                     </Fragment>
