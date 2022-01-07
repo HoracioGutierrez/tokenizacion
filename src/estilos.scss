@@ -192,4 +192,88 @@ html , body , #root {
             }
         }
     }
+
+
+    #landing-section-how {
+
+        @media screen and (min-width: 900px) {
+            display: flex;
+            padding: 0 100px;
+        }
+
+        > div {
+        }
+
+        #how-img {
+            @media screen and (min-width: 900px) {
+                width: 40%;
+            } 
+            
+            @media screen and (min-width: 1200px) {
+                width: 30%;
+            } 
+        }
+
+        #how-text {
+
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            
+            @media screen and (min-width: 900px) {
+                width: 60%;
+                text-align: left;
+                padding-left: 50px;
+                
+                #how-text-first {
+                    font-size: 1.2rem;
+                }
+            }
+            
+            @media screen and (min-width: 1200px) {
+                width: 70%;
+                padding-left: 100px;
+            }
+
+
+            #how-text-first , #how-text-second , #how-text-fourth {
+                font-weight: 500;
+            }
+
+            #how-text-second , #how-text-fourth {
+                margin-bottom: 1rem;
+            }
+
+            #how-text-third , #how-text-fifth {
+                font-size: 1rem;
+
+                @media screen and (min-width: 1000px) {
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                }
+            }
+
+            #how-icons {
+                display: flex;
+                justify-content: space-around;
+                margin: 2rem 0;
+
+                img {
+                    width: 20%;
+                    max-width: 120px;
+                }
+
+                @media screen and (min-width: 1000px) {
+                    padding : 0 50px
+                }
+
+                @media screen and (min-width: 1200px) {
+                    padding : 0 200px;
+                    margin: 3rem 0;
+                }
+
+            }
+        }
+            
+    }
 }
