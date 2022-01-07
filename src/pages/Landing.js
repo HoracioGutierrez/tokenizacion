@@ -69,7 +69,7 @@ const Landing = () => {
                 <Typography color="inherit">La tokenización de activos mediante blockchain es una tecnologia innovadora que democratiza y facilita la inversion en RealEstate y amplía las posibilidades de financiación de proyectos.</Typography>
                 <div id="benefits-icons">
                     <div className="benefit-icons-item">
-                        <img src="iconosC-01.svg" alt="Iconos C" />
+                        <img src="/assets/svg/iconosC-01.svg" alt="Iconos C" />
                         <Typography color="secondary" variant="h6">Digitalización</Typography>
                         <Typography color="inherit">Tokenizar activos, transacciones sin intermediarios</Typography>
                     </div>

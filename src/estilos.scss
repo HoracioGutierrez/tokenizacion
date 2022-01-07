@@ -282,6 +282,62 @@ html , body , #root {
 
     #landing-section-benefits {
 
+        text-align: center;
+
+        h4 {
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        > p {
+            margin-bottom: 2rem;
+
+            @media screen and (min-width: 600px) {
+                font-size: 1.2rem;
+            }
+
+            @media screen and (min-width: 1000px) {
+                font-size: 1.3rem;
+            }
+        }
+
+        #benefits-icons {
+
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width : 600px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            @media screen and (min-width : 1000px) {
+                padding: 0 100px;
+            }
+
+            .benefit-icons-item {
+
+                margin-bottom: 2rem;
+
+                img {
+                    width: 50%;
+                }
+
+                @media screen and (min-width : 600px) {
+                    width: 50%;
+                }
+                
+                @media screen and (min-width : 1000px) {
+                    width: 20%;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    padding: 0 1rem;
+                }
+            }
+        }
         
     }
 }
