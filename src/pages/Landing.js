@@ -64,7 +64,37 @@ const Landing = () => {
                     <Typography color="inherit" id="how-text-fifth">Es el proceso de digitalización de activos a través de la blockchain. Todas las transacciones son inmutables, están garantizadas y derecho el cual puede ser comercializado de manera segura y sin intermediarios en cualquier momento.</Typography>
                 </div>
             </section>
-            <section id="cuatro" className="landing-section"></section>
+            <section id="landing-section-benefits" className="landing-section">
+                <Typography color="inherit" variant="h4">Ventajas de la Tokenización</Typography>
+                <Typography color="inherit">La tokenización de activos mediante blockchain es una tecnologia innovadora que democratiza y facilita la inversion en RealEstate y amplía las posibilidades de financiación de proyectos.</Typography>
+                <div id="benefits-icons">
+                    <div className="benefit-icons-item">
+                        <img src="iconosC-01.svg" alt="Iconos C" />
+                        <Typography color="secondary" variant="h6">Digitalización</Typography>
+                        <Typography color="inherit">Tokenizar activos, transacciones sin intermediarios</Typography>
+                    </div>
+                    <div className="benefit-icons-item">
+                        <img src="/assets/svg/iconosC-02.svg" alt="Iconos C" />
+                        <Typography color="secondary" variant="h6">Reducción de costo</Typography>
+                        <Typography color="inherit">Transferencias a bajo coste, rápidas y seguras. Fácil almacenamiento del activo tokenizado</Typography>
+                    </div>
+                    <div className="benefit-icons-item">
+                        <img src="/assets/svg/iconosC-03.svg" alt="Iconos C" />
+                        <Typography color="secondary" variant="h6">Liquidez</Typography>
+                        <Typography color="inherit">Comercialización de los tokens en mercados secundarios</Typography>
+                    </div>
+                    <div className="benefit-icons-item">
+                        <img src="/assets/svg/iconosC-04.svg" alt="Iconos C" />
+                        <Typography color="secondary" variant="h6">Diversificación</Typography>
+                        <Typography color="inherit">Reduce la barrera de entrada para invertir, es posible desde 1USD. El inversor percibe ingresos pasivos</Typography>
+                    </div>
+                    <div className="benefit-icons-item">
+                        <img src="/assets/svg/iconosC-05.svg" alt="Iconos C" />
+                        <Typography color="secondary" variant="h6">Financiación de proyectos</Typography>
+                        <Typography color="inherit">El desarrollador obtiene financiación por parte de los inversores quienes resibirán los tokens y obtendrán ingresos pasivos</Typography>
+                    </div>
+                </div>
+            </section>
             <section id="cinco" className="landing-section"></section>
         </>
     )
