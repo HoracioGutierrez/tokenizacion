@@ -340,4 +340,55 @@ html , body , #root {
         }
         
     }
+
+
+
+
+    #landing-section-blockchain {
+
+        @media screen and (min-width: 900px) {
+            display: flex;
+            align-items: center;
+        }
+
+        @media screen and (min-width: 1000px) {
+            padding: 0 100px;
+        }
+        
+        > div:nth-child(1) {
+            width: 60%;
+
+            @media screen and (min-width: 1000px) {
+                width: 50%;
+            }
+        }
+
+        > div:nth-child(2) {
+            width: 40%;
+
+            @media screen and (min-width: 1000px) {
+                width: 50%;
+            }
+        }
+
+        #block-text {
+            
+            text-align: center;
+
+            @media screen and (min-width: 900px) {
+                padding-right: 2rem;
+                text-align: left;
+            }
+
+            h4 {
+                margin-bottom: 2rem;
+                font-weight: 500;
+            }
+
+            p {
+                margin-bottom: 2rem;
+            }
+        }
+
+    }
 }

@@ -95,7 +95,18 @@ const Landing = () => {
                     </div>
                 </div>
             </section>
-            <section id="cinco" className="landing-section"></section>
+            <section id="landing-section-blockchain" className="landing-section">
+                <div id="block-text">
+                    <Typography color="inherit" variant="h4">¿Cómo funciona la blockchain?</Typography>
+                    <Typography>Blockchain es una tecnología que genera bases de datos inmutables distribuidas en un entorno digital. Se almacena y verifica la información sin una entidad central que intervenga.</Typography>
+                    <Typography>Esto habilita, entre otras cosas, la creación de valores digitales que pueden ser comercializados sin necesidad de pasar por intermediarios.</Typography>
+                </div>
+                <Hidden mdDown>
+                    <div id="block-img">
+                        <img src="/assets/svg/comoFunciona.svg" alt="Blockchain" />
+                    </div>
+                </Hidden>
+            </section>
         </>
     )
 }
