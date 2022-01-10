@@ -13,6 +13,11 @@ html , body , #root {
     flex-direction: column;
 }
 
+#root > main {
+    flex-grow: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
 
 #layout-header {
@@ -455,4 +460,26 @@ html , body , #root {
             }
         }
     }
+}
+
+
+
+.link-button {
+    text-transform: unset!important;
+    &:hover {
+        background-color: unset!important;
+    }
+}
+
+.curved {
+    border-radius: 0 30px 0 30px!important;
+    padding: 6px 26px!important;
+}
+
+.noShadowHeader {
+    box-shadow: none!important;
+}
+
+.spacing {
+    height: 30px;
 }

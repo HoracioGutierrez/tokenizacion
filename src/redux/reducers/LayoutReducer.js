@@ -33,6 +33,12 @@ const initialState = {
             text : "Marketplace",
             to : "/marketplace",
             public : true
+        },
+        {
+            id : 6,
+            text : "swatches",
+            to : "/swatches",
+            public : true
         }
     ]
 }
