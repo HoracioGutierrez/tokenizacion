@@ -45,30 +45,30 @@ const Swatches = () => {
             field : "id",
             headerName : "ID",
             disableColumnMenu : true,
-            width : 50
+            width : 50,
         },
         {
             field : "token",
             headerName : "Token",
             disableColumnMenu : true,
-            flex : 1
+            flex : 1,
         },
         {
             field : "address",
             headerName : "Address",
             disableColumnMenu : true,
-            flex : 1
+            flex : 1,
         },
         {
             field : "cantidad",
             headerName : "Cantidad",
             disableColumnMenu : true,
-            flex : 1
+            flex : 1,
         },
         {
             field : "precio",
             headerName : "Precio",
-            flex : 1
+            flex : 1,
         }
 
     ]
@@ -159,6 +159,7 @@ const Swatches = () => {
             </Box>
             <div className="spacing" />
             <div className="spacing" />
+            <div className="spacing" />
             <Box height={300}>
                 <DataGrid
                     rows={rows}
@@ -167,6 +168,18 @@ const Swatches = () => {
                     rowsPerPageOptions={[3]}
                     checkboxSelection
                     disableSelectionOnClick
+                />
+            </Box>
+            <div className="spacing" />
+            <Box height={300}>
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    pageSize={3}
+                    rowsPerPageOptions={[3]}
+                    checkboxSelection
+                    disableSelectionOnClick
+                    getRowClassName={({row:{id}})=>id%2===0?'cell-even':'cell-odd'}
                 />
             </Box>
         </div>
