@@ -11,7 +11,6 @@ const ItemListDrawer = () => {
     const { toggleDrawer } = useActions()
     const { manualLogin, manualLogout, logged } = useAuth()
 
-    console.log(logged)
     return (
         <Drawer open={drawer_open} onClose={toggleDrawer}>
             <List>
