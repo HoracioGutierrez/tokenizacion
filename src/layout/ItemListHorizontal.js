@@ -1,12 +1,13 @@
-import { Button, Divider } from "@mui/material"
+import { Button } from "@mui/material"
 import { Link } from "react-router-dom"
 import useActions from "../hooks/useActions"
 import useLayout from "../hooks/useLayout"
+import { useAuth } from "../providers/AuthProvider/AuthProvider"
 
 const ItemListHorizontal = () => {
 
     const { links } = useLayout()
-    const { loginManually } = useActions()
+    const { manualLogin, manualLogout, logged } = useAuth()
 
     return (
         <>
@@ -15,7 +16,9 @@ const ItemListHorizontal = () => {
                     {text}
                 </Button>
             ))}
-            <Button variant='contained' onClick={loginManually}>Conectar a Wallet</Button>
+            <Button onClick={logged ? manualLogout : manualLogin} variant='contained'>
+                {logged ? 'Desconectar' : 'Conectar a Wallet' }
+            </Button>
         </>
     )
 }
