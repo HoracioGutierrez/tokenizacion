@@ -1,15 +1,12 @@
-import { Button, Container, Hidden, IconButton, Toolbar, Typography } from '@mui/material';
+import { Container, Hidden, IconButton, Toolbar } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import { Box } from '@mui/system';
-import { Link } from 'react-router-dom';
 import useActions from "../hooks/useActions"
-import useLayout from '../hooks/useLayout';
 import NavBar from './NavBar';
 
 const Header = () => {
 
     const { toggleDrawer } = useActions()
-    const { drawer_open } = useLayout()
 
     return (
         <AppBar position='static' id="layout-header" color='transparent'>
