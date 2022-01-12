@@ -50,6 +50,7 @@ html , body , #root {
 
     .landing-section {
         padding: 50px 0;
+        margin-bottom: 100px;
     }
 
     #landing-section-banner {
@@ -316,7 +317,7 @@ html , body , #root {
                 justify-content: center;
             }
 
-            @media screen and (min-width : 1000px) {
+            @media screen and (min-width : 1200px) {
                 padding: 0 100px;
             }
 
