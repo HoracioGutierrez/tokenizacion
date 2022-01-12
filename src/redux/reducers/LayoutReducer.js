@@ -39,6 +39,12 @@ const initialState = {
             text : "swatches",
             to : "/swatches",
             public : true
+        },
+        {
+            id : 7,
+            text : "perfil",
+            to : "/perfil",
+            public : false
         }
     ]
 }
