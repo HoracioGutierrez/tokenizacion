@@ -1,6 +1,7 @@
 import { Button, Drawer, List, ListItem, ListItemText } from "@mui/material"
 import { Fragment } from "react"
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 import useActions from "../hooks/useActions"
 import useLayout from "../hooks/useLayout"
 import { useAuth } from "../providers/AuthProvider/AuthProvider"
@@ -21,11 +22,11 @@ const ItemListDrawer = () => {
                         </Button>
                     </ListItemText>
                 </ListItem>
-                {links.map(({ path, id, linkText }) => (
+                {links.map(({ path, id, linkText, isHashLink, hash }) => (
                     <Fragment key={id}>
                         <ListItem button>
                             <ListItemText>
-                                <Link to={path} className="drawer-link">{linkText}</Link>
+                                {isHashLink ? <HashLink className="drawer-link" to={hash}>{linkText}</HashLink> : <Link className="drawer-link" to={path}>{linkText}</Link>}
                             </ListItemText>
                         </ListItem>
                     </Fragment>

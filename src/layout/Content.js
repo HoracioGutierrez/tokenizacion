@@ -1,7 +1,6 @@
 import { Container } from "@mui/material"
 import { Route, Routes } from "react-router-dom"
 import useLayout from "../hooks/useLayout"
-import routes from "../routes"
 import { PrivateRoute, PublicRoute } from "../utils/CustomRoutes"
 
 const Content = () => {

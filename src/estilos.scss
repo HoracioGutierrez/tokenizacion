@@ -24,7 +24,6 @@ body,
 }
 
 #layout-header {
-    box-shadow: unset;
 
     #main-logo {
         height: 64px;
@@ -190,7 +189,7 @@ body,
         }
     }
 
-    #landing-section-how {
+    #que-es-tokenizacion {
         @media screen and (min-width: 900px) {
             display: flex;
             padding: 0 100px;
@@ -272,7 +271,7 @@ body,
         }
     }
 
-    #landing-section-benefits {
+    #beneficios {
         text-align: center;
 
         @media screen and (min-width: 1000px) {

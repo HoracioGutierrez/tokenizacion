@@ -45,7 +45,7 @@ const Landing = () => {
                     <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam.</Typography>
                 </div>
             </section>
-            <section id="landing-section-how" className="landing-section">
+            <section id="que-es-tokenizacion" className="landing-section">
                 <Hidden mdDown>
                     <div id="how-img">
                         <img src="/assets/svg/dibujo.svg" alt="How it works?" />
@@ -64,7 +64,7 @@ const Landing = () => {
                     <Typography color="inherit" id="how-text-fifth">Es el proceso de digitalización de activos a través de la blockchain. Todas las transacciones son inmutables, están garantizadas y derecho el cual puede ser comercializado de manera segura y sin intermediarios en cualquier momento.</Typography>
                 </div>
             </section>
-            <section id="landing-section-benefits" className="landing-section">
+            <section id="beneficios" className="landing-section">
                 <Typography color="inherit" variant="h4">Ventajas de la Tokenización</Typography>
                 <Typography color="inherit">La tokenización de activos mediante blockchain es una tecnologia innovadora que democratiza y facilita la inversion en RealEstate y amplía las posibilidades de financiación de proyectos.</Typography>
                 <div id="benefits-icons">
