@@ -104,6 +104,36 @@ const routes = [
         linkText : "Beneficios",
         isRoute : false,
         privileges : ["admin", "user"]
+    },
+    {
+        id : 8,
+        htmlId : "tokenizar",
+        path : "/tokenizar",
+        hash : "/#tokenizar",
+        exact : true,
+        Element : () => <h1>Tokenizar</h1>,
+        isPrivate : true,
+        isHeaderLink : true,
+        linkOrder : 7,
+        isHashLink : false,
+        linkText : "Tokenizar",
+        isRoute : true,
+        privileges : ["admin"]
+    },
+    {
+        id : 9,
+        htmlId : "dividendos",
+        path : "/dividendos",
+        hash : "/#dividendos",
+        exact : true,
+        Element : () => <h1>Dividendos</h1>,
+        isPrivate : true,
+        isHeaderLink : true,
+        linkOrder : 8,
+        isHashLink : false,
+        linkText : "Repartir Dividendos",
+        isRoute : true,
+        privileges : ["admin"]
     }
 ]
 
