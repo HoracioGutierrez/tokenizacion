@@ -10,9 +10,9 @@ const ItemListHorizontal = () => {
 
     return (
         <>
-            {links.map(({ to, id, text }) => (
-                <Button key={id} className='layout-header-link' color='inherit' disableRipple disableElevation to={to} component={Link}>
-                    {text}
+            {links.map(({ path, id, linkText }) => (
+                <Button key={id} className='layout-header-link' color='inherit' disableRipple disableElevation to={path} component={Link}>
+                    {linkText}
                 </Button>
             ))}
             <Button onClick={logged ? manualLogout : manualLogin} variant='contained'>

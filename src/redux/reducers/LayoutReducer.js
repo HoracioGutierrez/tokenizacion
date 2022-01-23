@@ -1,52 +1,11 @@
+import routes from "../../routes"
 import { TOGGLE_DARK_MODE, TOGGLE_DRAWER } from "../actionConstants"
 
 const initialState = {
     dark : false,
     drawer_open : false,
-    links : [
-        {
-            id : 1,
-            text : "inicio",
-            to : "/",
-            public : true
-        },
-        {
-            id : 2,
-            text : "Que es la tokenización?",
-            to : "/que-es-tokenizacion",
-            public : true
-        },
-        {
-            id : 3,
-            text : "Beneficios",
-            to : "/beneficios",
-            public : true
-        },
-        {
-            id : 4,
-            text : "Proyectos",
-            to : "/proyectos",
-            public : true
-        },
-        {
-            id : 5,
-            text : "Marketplace",
-            to : "/marketplace",
-            public : true
-        },
-        {
-            id : 6,
-            text : "swatches",
-            to : "/swatches",
-            public : true
-        },
-        {
-            id : 7,
-            text : "perfil",
-            to : "/perfil",
-            public : false
-        }
-    ]
+    links : routes.filter(route => route.isHeaderLink).sort((a, b) => a.linkOrder - b.linkOrder),
+    routes : routes.filter(route => route.isRoute)
 }
 
 const LayoutReducer = (state = initialState, { type, payload }) => {

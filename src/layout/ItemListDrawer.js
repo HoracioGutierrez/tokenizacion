@@ -21,11 +21,11 @@ const ItemListDrawer = () => {
                         </Button>
                     </ListItemText>
                 </ListItem>
-                {links.map(({ to, id, text }) => (
+                {links.map(({ path, id, linkText }) => (
                     <Fragment key={id}>
                         <ListItem button>
                             <ListItemText>
-                                <Link to={to} className="drawer-link">{text}</Link>
+                                <Link to={path} className="drawer-link">{linkText}</Link>
                             </ListItemText>
                         </ListItem>
                     </Fragment>
