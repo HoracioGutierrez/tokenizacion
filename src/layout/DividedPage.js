@@ -1,29 +1,53 @@
-const DividedPage = ({children}) => {
+import { Button, Typography } from "@mui/material"
+import { useState } from "react"
+
+export const DividedPage = ({children}) => {
     return (
-        <div className="divided-page">
+        <div id="divided-page">
             {children}
         </div>
     )
 }
 
-const PageCard = ({children}) => {
+export const PageCard = ({imgUrl,firstText,secondText,edit,buttonText,onChangeFirst,onChangeSecond,onSubmit}) => {
+
+    const [firstValue, setFirstValue] = useState(firstText)
+    const [secondValue, setSecondValue] = useState(secondText)
+
+    const handleFirstChange = (e) => {
+        setFirstValue(e.target.innerText)
+        edit && onChangeFirst ? onChangeFirst(e.target.innerText) : console.log(e.target.innerText)
+    }
+
+    const handleSecondChange = (e) => {
+        setSecondValue(e.target.innerText)
+        edit && onChangeSecond ? onChangeSecond(e.target.innerText) : console.log(e.target.innerText)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        edit && onSubmit ? onSubmit({firstValue,secondValue}) : console.log({firstValue,secondValue})
+    }
+
     return (
-        <section id="page-card-section">
-            <div id="page-card">
-                <div id="page-card-avatar">
-                    {children}
-                </div>
+        <div id="divided-page-card">
+            <div id="divided-page-card-img">
+                <img src={imgUrl} alt="Avatar" />
             </div>
-        </section>
+            <div id="divided-page-card-info">
+                <Typography suppressContentEditableWarning={true} contentEditable={edit} variant="h5" color="primary" onInput={handleFirstChange}>{firstText}</Typography>
+                <Typography suppressContentEditableWarning={true} contentEditable={edit} onInput={handleSecondChange}>{secondText}</Typography>
+                {edit && <Button variant="contained" color="primary" onClick={handleSubmit}>{buttonText}</Button>}
+            </div>
+        </div>
     )
 }
 
-const PageContent = ({children}) => {
+export const PageContent = ({children,title="Titulo Pagina"}) => {
     return (
-        <section id="page-content-section">
+        <div id="divided-page-content">
+            <Typography variant="h5">{title}</Typography>
             {children}
-        </section>
+        </div>
     )
 }
-
-export default DividedPage

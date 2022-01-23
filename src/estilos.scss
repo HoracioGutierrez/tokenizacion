@@ -17,7 +17,7 @@ body,
 
 #root > main {
     flex-grow: 1;
-    padding-top: 1rem;
+    padding-top: 5rem;
     padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -445,6 +445,7 @@ body,
     .page-section {
         display: flex;
         flex-direction: row;
+        margin-top: 2rem;
     }
 
     #perfil-card {
@@ -511,4 +512,55 @@ body,
 
 .cell-odd {
     background-color: rgba(214, 214, 214, 0.4);
+}
+
+
+#divided-page {
+
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 450px) {
+        align-items: center;
+    }
+     
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    > div {
+        margin-bottom: 2rem;
+
+        @media screen and (min-width: 800px) {
+            margin-bottom: 0;
+        }
+    }
+
+    #divided-page-card {
+
+        max-width: 400px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        background-color: #F4F4F4;
+        padding: 1rem;
+
+        img {
+            width: 100%;
+        }
+
+        #divided-page-card-info {
+            margin-top: 1rem;
+            text-align: center;
+
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    #divided-page-content {
+        @media screen and (min-width: 800px) {
+            padding: 0 0 2rem 2rem;
+        }
+    }
 }
