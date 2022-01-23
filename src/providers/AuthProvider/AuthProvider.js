@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import { toast } from "react-toastify";
-import useActions from "../../hooks/useActions";
 
 export const context = createContext()
 const { Provider } = context
@@ -13,9 +12,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
 
     const [logged, setLogged] = useState(false)
-    const actions = useActions()
-    const moralis = useMoralis()
-    const { account, auth, user, authenticate, refetchUserData, isAuthenticated, isAuthenticating, isWeb3Enabled, isWeb3EnableLoading, enableWeb3, logout } = useMoralis()
+    const { account, auth, user, authenticate, isAuthenticated, isAuthenticating, isWeb3Enabled, isWeb3EnableLoading, enableWeb3, logout } = useMoralis()
 
 
     const manualLogin = async () => {
@@ -32,7 +29,7 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        if (isAuthenticated && !isAuthenticating && auth.state == "authenticated" && isWeb3Enabled) {
+        if (isAuthenticated && !isAuthenticating && auth.state === "authenticated" && isWeb3Enabled) {
             if (user) {
                 if (user.get("ethAddress") !== account && account) {
                     toast.warn("Por favor revise su extension de Metamask y apruebe el cambio de cuenta!")

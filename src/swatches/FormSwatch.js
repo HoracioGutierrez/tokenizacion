@@ -2,7 +2,6 @@ import { Box, Button, Grid, TextField } from "@mui/material"
 import { Controller, useForm } from "react-hook-form"
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { DataGrid } from '@mui/x-data-grid';
 
 const FormSwatch = () => {
 
@@ -13,7 +12,7 @@ const FormSwatch = () => {
         provincia: yup.string().required("La provincia es obligatoria").max(50, "La provincia no puede tener mas de 50 caracteres").min(3, "La provincia debe tener al menos 3 caracteres").matches(/^[a-zA-Z\s]*$/, "La provincia solo puede contener letras"),
     })
 
-    const { register, control, handleSubmit, formState } = useForm({
+    const { control, handleSubmit, formState } = useForm({
         defaultValues: {
             nombre: "",
             dni: "",

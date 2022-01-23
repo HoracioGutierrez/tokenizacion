@@ -1,5 +1,4 @@
 import { Box, Button, Hidden, Typography } from "@mui/material"
-import { useLocation, useNavigate } from "react-router-dom"
 import theme from "../providers/ThemeProvider/theme"
 
 const Landing = () => {
