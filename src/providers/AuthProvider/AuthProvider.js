@@ -13,6 +13,7 @@ const AuthProvider = ({ children }) => {
 
     const [logged, setLogged] = useState(false)
     const { account, auth, user, authenticate, isAuthenticated, isAuthenticating, isWeb3Enabled, isWeb3EnableLoading, enableWeb3, logout } = useMoralis()
+    const role = { admin: true, user: false , role : "admin" }
 
 
     const manualLogin = async () => {
@@ -53,7 +54,8 @@ const AuthProvider = ({ children }) => {
     const valorDelProvider = {
         manualLogin,
         manualLogout,
-        logged
+        logged,
+        role
     }
 
 

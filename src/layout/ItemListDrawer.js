@@ -10,7 +10,7 @@ const ItemListDrawer = () => {
 
     const { links, drawer_open } = useLayout()
     const { toggleDrawer } = useActions()
-    const { manualLogin, manualLogout, logged } = useAuth()
+    const { manualLogin, manualLogout, logged , role } = useAuth()
 
     return (
         <Drawer open={drawer_open} onClose={toggleDrawer}>
@@ -22,7 +22,7 @@ const ItemListDrawer = () => {
                         </Button>
                     </ListItemText>
                 </ListItem>
-                {links.map(({ path, id, linkText, isHashLink, hash }) => (
+                {links.filter(link=>link.privileges.includes(role.role)).map(({ path, id, linkText, isHashLink, hash }) => (
                     <Fragment key={id}>
                         <ListItem button>
                             <ListItemText>
