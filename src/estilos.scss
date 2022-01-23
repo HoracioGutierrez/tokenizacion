@@ -555,6 +555,16 @@ body,
             p {
                 margin-bottom: 1rem;
             }
+
+            > div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                span {
+                    margin-left: 0.5rem;
+                }
+            }
         }
     }
 
@@ -563,4 +573,8 @@ body,
             padding: 0 0 2rem 2rem;
         }
     }
+}
+
+.disabled-icon {
+    color: rgba(128, 128, 128, 0.548);
 }

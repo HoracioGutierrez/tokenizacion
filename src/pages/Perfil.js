@@ -10,9 +10,11 @@ const Perfil = () => {
                     firstText={"Test"}
                     secondText={"Test"}
                     edit={true}
-                    buttonText={"Upload Image"}
+                    buttonText={"Guardar Cambios"}
                     onChangeFirst={ value => console.log(value)}
+                    onSubmitFirst={ value => console.log(value)}
                     onChangeSecond={ value => console.log(value) }
+                    onSubmitSecond={ value => console.log(value) }
                     onSubmit={ value => console.log(value) }
                 />
                 <PageContent title="Divided Title">
