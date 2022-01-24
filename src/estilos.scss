@@ -508,6 +508,13 @@ body,
 
 .input-control {
     margin: 1rem 0 !important;
+
+    &.disabled {
+
+        input:disabled::before {
+            content: none!important;
+        }
+    }
 }
 
 .cell-odd {

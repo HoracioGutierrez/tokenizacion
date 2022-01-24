@@ -1,6 +1,9 @@
-import { Button, Typography } from "@mui/material"
+import { Button, Typography, TextField, Box, InputAdornment } from "@mui/material"
 import { useState } from "react"
 import Icon from '@mui/material/Icon';
+import { Controller, useForm, useController } from "react-hook-form"
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 export const DividedPage = ({ children }) => {
     return (
@@ -12,36 +15,29 @@ export const DividedPage = ({ children }) => {
 
 export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFirst, onChangeSecond, onSubmit, onSubmitFirst, onSubmitSecond }) => {
 
-    const [firstValue, setFirstValue] = useState(firstText)
-    const [secondValue, setSecondValue] = useState(secondText)
-    const [editFirst, setEditFirst] = useState(false)
-    const [editSecond, setEditSecond] = useState(false)
+    const [disabledFirst, setDisabledFirst] = useState(true)
+    const [disabledSecond, setDisabledSecond] = useState(true)
 
-    const handleFirstChange = (e) => {
-        setFirstValue(e.target.innerText)
-        editFirst && onChangeFirst ? onChangeFirst(e.target.innerText) : console.log(e.target.innerText)
+    const schema = yup.object().shape({
+        firstValue: yup.string().required("El campo es obligatorio").max(50, "El campo no puede tener mas de 50 caracteres").min(3, "El campo debe tener al menos 3 caracteres").matches(/^[a-zA-Z\s]*$/, "El campo  no tiene el formato correcto"),
+        secondValue: yup.string().required("El campo es obligatorio").max(50, "El campo no puede tener mas de 50 caracteres").min(3, "El campo debe tener al menos 3 caracteres").matches(/^[a-zA-Z\s]*$/, "El campo no tiene el formato correcto")
+    })
+
+    const { control, handleSubmit: handleSubmitHook, formState } = useForm({
+        defaultValues: {
+            firstValue: firstText,
+            secondValue: secondText
+        },
+        resolver: yupResolver(schema)
+    })
+    const { errors } = formState
+
+    const toggleEditFirst = () => {
+        setDisabledFirst(!disabledFirst)
     }
 
-    const handleSecondChange = (e) => {
-        setSecondValue(e.target.innerText)
-        editSecond && onChangeSecond ? onChangeSecond(e.target.innerText) : console.log(e.target.innerText)
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        editFirst && onSubmit ? onSubmit({ firstValue, secondValue }) : console.log({ firstValue, secondValue })
-    }
-
-    const handleSubmitFirst = (e) => {
-        e.preventDefault()
-        editFirst && onSubmitFirst ? onSubmitFirst(firstValue) : console.log(firstValue)
-        setEditFirst(false)
-    }
-
-    const handleSubmitSecond = (e) => {
-        e.preventDefault()
-        editSecond && onSubmitSecond ? onSubmitSecond(secondValue) : console.log(secondValue)
-        setEditSecond(false)
+    const toggleEditSecond = () => {
+        setDisabledSecond(!disabledSecond)
     }
 
     return (
@@ -50,17 +46,45 @@ export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFi
                 <img src={imgUrl} alt="Avatar" />
             </div>
             <div id="divided-page-card-info">
-                <div>
-                    <Typography suppressContentEditableWarning={true} contentEditable={editFirst} variant="h5" color="primary" onInput={handleFirstChange} onBlur={handleSubmitFirst}>{firstText}</Typography>
-                    <Icon className={!editFirst ? "disabled-icon" : "test"} onClick={(e) => {
-                        setEditFirst(true)
-                    }}>mode_edit</Icon>
-                </div>
-                <div>
-                    <Typography suppressContentEditableWarning={true} onBlur={handleSubmitSecond} contentEditable={editSecond} onInput={handleSecondChange}>{secondText}</Typography>
-                    <Icon className={!editSecond ? "disabled-icon" : "test"} onClick={() => setEditSecond(true)}>mode_edit</Icon>
-                </div>
-                {<Button variant="contained" color="primary" onClick={handleSubmit}>{buttonText}</Button>}
+                <Box component="form" onSubmit={handleSubmitHook(onSubmit)}>
+                    <div>
+                        <Controller name="firstValue" control={control} render={({ field }) => (
+                            <TextField {...field}
+                                error={errors.firstValue ? true : false}
+                                placeholder="Primer Texto"
+                                helperText={errors.firstValue?.message}
+                                fullWidth
+                                variant="standard"
+                                className={`input-control ${disabledFirst ? "disabled" : ""}`}
+                                disabled={disabledFirst}
+                                InputProps={{
+                                    endAdornment: <InputAdornment position="end">
+                                        <Icon onClick={toggleEditFirst}> mode_edit</Icon>
+                                    </InputAdornment>
+                                }}
+                            />
+                        )} />
+                    </div>
+                    <div>
+                        <Controller name="secondValue" control={control} render={({ field }) => (
+                            <TextField {...field}
+                                error={errors.secondValue ? true : false}
+                                placeholder="Segundo Texto"
+                                helperText={errors.secondValue?.message}
+                                fullWidth
+                                variant="standard"
+                                className={`input-control ${disabledSecond ? "disabled" : ""}`}
+                                disabled={disabledSecond}
+                                InputProps={{
+                                    endAdornment: <InputAdornment position="end">
+                                        <Icon onClick={toggleEditSecond}> mode_edit</Icon>
+                                    </InputAdornment>
+                                }}
+                            />
+                        )} />
+                    </div>
+                    {<Button variant="contained" color="primary">{buttonText}</Button>}
+                </Box>
             </div>
         </div>
     )
