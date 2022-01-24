@@ -58,6 +58,7 @@ export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFi
                                     variant="standard"
                                     className={`input-control ${editFirst ? "input-control-active" : ""}`}
                                     focused={editFirst}
+                                    size="small"
                                     disabled={!editFirst}
                                     sx={{
                                         width: field.value.length * 10 + "px"
@@ -83,6 +84,7 @@ export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFi
                                 variant="standard"
                                 className={`input-control ${editSecond ? "input-control-active" : ""}`}
                                 focused={editSecond}
+                                size="small"
                                 disabled={!editSecond}
                                 sx={{
                                     width: field.value.length * 10 + "px"
