@@ -48,42 +48,54 @@ export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFi
             <div id="divided-page-card-info">
                 <Box component="form" onSubmit={handleSubmitHook(onSubmit)}>
                     <div>
-                        {editFirst
-                        ?<Controller name="firstValue" control={control} render={({ field }) => (
-                            <TextField {...field}
-                                error={errors.firstValue ? true : false}
-                                placeholder="Primer Texto"
-                                helperText={errors.firstValue?.message}
-                                variant="standard"
-                                fullWidth
-                                className="input-control"
-                                focused={editFirst}
-                                inputProps={{
-                                    autoFocus : true
-                                }}
-                                onBlur={() => setEditFirst(false)}
-                            />
-                        )} />
-                        :<Typography>{firstText}</Typography>}
+                        <Controller name="firstValue" control={control} render={({ field }) => {
+                            console.log(field)
+                            return (
+                                <TextField {...field}
+                                    error={errors.firstValue ? true : false}
+                                    placeholder="Primer Texto"
+                                    helperText={errors.firstValue?.message}
+                                    variant="standard"
+                                    className={`input-control ${editFirst ? "input-control-active" : ""}`}
+                                    focused={editFirst}
+                                    disabled={!editFirst}
+                                    sx={{
+                                        width: field.value.length * 10 + "px"
+                                    }}
+                                    inputProps={{
+                                        autoFocus: editFirst
+                                    }}
+                                    InputProps={{
+                                        disableUnderline: !editFirst
+                                    }}
+                                    onBlur={() => setEditFirst(false)}
+                                />
+                            )
+                        }} />
                         <Icon onClick={toggleEditFirst}>mode_edit</Icon>
                     </div>
                     <div>
-                        {editSecond
-                        ?<Controller name="secondValue" control={control} render={({ field }) => (
+                        <Controller name="secondValue" control={control} render={({ field }) => (
                             <TextField {...field}
                                 error={errors.secondValue ? true : false}
                                 placeholder="Segundo Texto"
                                 helperText={errors.secondValue?.message}
                                 variant="standard"
-                                className="input-control"
-                                fullWidth
+                                className={`input-control ${editSecond ? "input-control-active" : ""}`}
+                                focused={editSecond}
+                                disabled={!editSecond}
+                                sx={{
+                                    width: field.value.length * 10 + "px"
+                                }}
                                 inputProps={{
-                                    autoFocus : true
+                                    autoFocus: editSecond
+                                }}
+                                InputProps={{
+                                    disableUnderline: !editSecond
                                 }}
                                 onBlur={() => setEditSecond(false)}
                             />
                         )} />
-                        :<Typography>{secondText}</Typography>}
                         <Icon onClick={toggleEditSecond}>mode_edit</Icon>
                     </div>
                     <Button variant="contained" color="primary">{buttonText}</Button>

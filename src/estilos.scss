@@ -571,18 +571,29 @@ body,
                     align-items: center;
                     margin-bottom: 1rem;
 
-                    .input-control {
-                        width: 0;
-                        animation: expand 0.3s ease forwards;
+                    //, input , div , input:before
+
+                    input {
+                        text-align: center;
                     }
 
-                    @keyframes expand {
-                        0% {
-                            width: 0;
+                    .input-control  {
+                        transition: all 0.3s ease;
+                        display: block;
+
+                        > div {
+                            display: block;
+                            transition: all 0.3s ease;
+
+                            input {
+                                transition: all 0.3s ease;
+                            }
                         }
-                        100% {
-                            width: 100%;
-                        }
+                    }
+
+                    .input-control-active {
+                        width: 100%;
+                        transition: all 0.3s ease;
                     }
 
                     span {
