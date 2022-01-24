@@ -15,8 +15,8 @@ export const DividedPage = ({ children }) => {
 
 export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFirst, onChangeSecond, onSubmit, onSubmitFirst, onSubmitSecond }) => {
 
-    const [disabledFirst, setDisabledFirst] = useState(true)
-    const [disabledSecond, setDisabledSecond] = useState(true)
+    const [editFirst, setEditFirst] = useState(false)
+    const [editSecond, setEditSecond] = useState(false)
 
     const schema = yup.object().shape({
         firstValue: yup.string().required("El campo es obligatorio").max(50, "El campo no puede tener mas de 50 caracteres").min(3, "El campo debe tener al menos 3 caracteres").matches(/^[a-zA-Z\s]*$/, "El campo  no tiene el formato correcto"),
@@ -33,11 +33,11 @@ export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFi
     const { errors } = formState
 
     const toggleEditFirst = () => {
-        setDisabledFirst(!disabledFirst)
+        setEditFirst(!editFirst)
     }
 
     const toggleEditSecond = () => {
-        setDisabledSecond(!disabledSecond)
+        setEditSecond(!editSecond)
     }
 
     return (
@@ -48,42 +48,45 @@ export const PageCard = ({ imgUrl, firstText, secondText, buttonText, onChangeFi
             <div id="divided-page-card-info">
                 <Box component="form" onSubmit={handleSubmitHook(onSubmit)}>
                     <div>
-                        <Controller name="firstValue" control={control} render={({ field }) => (
+                        {editFirst
+                        ?<Controller name="firstValue" control={control} render={({ field }) => (
                             <TextField {...field}
                                 error={errors.firstValue ? true : false}
                                 placeholder="Primer Texto"
                                 helperText={errors.firstValue?.message}
-                                fullWidth
                                 variant="standard"
-                                className={`input-control ${disabledFirst ? "disabled" : ""}`}
-                                disabled={disabledFirst}
-                                InputProps={{
-                                    endAdornment: <InputAdornment position="end">
-                                        <Icon onClick={toggleEditFirst}> mode_edit</Icon>
-                                    </InputAdornment>
+                                fullWidth
+                                className="input-control"
+                                focused={editFirst}
+                                inputProps={{
+                                    autoFocus : true
                                 }}
+                                onBlur={() => setEditFirst(false)}
                             />
                         )} />
+                        :<Typography>{firstText}</Typography>}
+                        <Icon onClick={toggleEditFirst}>mode_edit</Icon>
                     </div>
                     <div>
-                        <Controller name="secondValue" control={control} render={({ field }) => (
+                        {editSecond
+                        ?<Controller name="secondValue" control={control} render={({ field }) => (
                             <TextField {...field}
                                 error={errors.secondValue ? true : false}
                                 placeholder="Segundo Texto"
                                 helperText={errors.secondValue?.message}
-                                fullWidth
                                 variant="standard"
-                                className={`input-control ${disabledSecond ? "disabled" : ""}`}
-                                disabled={disabledSecond}
-                                InputProps={{
-                                    endAdornment: <InputAdornment position="end">
-                                        <Icon onClick={toggleEditSecond}> mode_edit</Icon>
-                                    </InputAdornment>
+                                className="input-control"
+                                fullWidth
+                                inputProps={{
+                                    autoFocus : true
                                 }}
+                                onBlur={() => setEditSecond(false)}
                             />
                         )} />
+                        :<Typography>{secondText}</Typography>}
+                        <Icon onClick={toggleEditSecond}>mode_edit</Icon>
                     </div>
-                    {<Button variant="contained" color="primary">{buttonText}</Button>}
+                    <Button variant="contained" color="primary">{buttonText}</Button>
                 </Box>
             </div>
         </div>
